@@ -1,4 +1,4 @@
-Package go-getfilefromurl
+Package go-unzip
 ===================
 
 Package go-unzip provides a very simple library to extract zip archive
