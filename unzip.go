@@ -6,6 +6,7 @@ import (
 	"path/filepath"
 	"io"
 	"fmt"
+	"strings"
 )
 
 type Unzip struct {
@@ -46,6 +47,9 @@ func (uz Unzip) Extract() error {
 		}()
 
 		path := filepath.Join(uz.Dest, f.Name)
+		if !strings.HasPrefix(path, filepath.Clean(uz.Dest)+string(os.PathSeparator)) {
+            return fmt.Errorf("%s: Illegal file path", path)
+        }
 
 		if f.FileInfo().IsDir() {
 			os.MkdirAll(path, f.Mode())
