@@ -14,7 +14,7 @@ go get -u github.com/artdarek/go-unzip
 package main
 
 import (
-    "github.com/artdarek/go-unzip"
+	"github.com/artdarek/go-unzip"
 	"fmt"
 )
 
